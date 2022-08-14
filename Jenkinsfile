@@ -1,14 +1,6 @@
 pipeline {
     agent any 
-    stages {
-       stage('Git Checkout') {
-            steps {
-               gitCheckout(
-                  branch: "master",
-                  url: "https://github.com/bala3404/sample-web-application.git"
-                )
-            }
-       }	        
+    stages {     
       stage('branch name') {
            steps {
              

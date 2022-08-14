@@ -3,16 +3,14 @@ pipeline {
     stages {     
       stage('branch name') {
            steps {
-             
-               echo "${env.BRANCH_NAME}"
+               echo "${env.BRANCH_NAME}"	  
 			  
-			   sh '''
-			     printenv
-			     ls
+		   sh '''
+		     printenv
+		     ls
 				  
-		         	 '''	
+         	 '''	
                  }
                }
 	    }
-     
-	   } 
+	 } 

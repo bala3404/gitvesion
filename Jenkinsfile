@@ -9,23 +9,21 @@ pipeline {
 			   sh '''
 			     printenv
 				  
-				 '''	
-          }
-        }
+		         	 '''	
+                 }
+               }
 	 }
      stage('main') {
-	       when {
-		        branch "main"
+	  when {
+               branch "main"
 		   }
-           steps {
-             
+          steps { 
                echo "${env.BRANCH_NAME}"
 			   echo "${BRANCH_NAME}"
 			   sh '''
 			     printenv
-				 gitversion /output buildserver
-				  
-				 '''
+			     gitversion /output buildserver  
+			   '''
 				echo "This is main branch Execution"
 				script {
 				def props = readProperties file: 'gitversion.properties'

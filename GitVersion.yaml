@@ -1,0 +1,15 @@
+#GitVersion.yml
+
+mode: Mainline
+branches:
+  feature:
+    regex: ^feature?[/-]
+    source-branches: ['main','master']
+    tag: feat-{BranchName}
+  fix:
+    regex: bugfix(es)?[/-]
+    source-branches: ['main','master']
+    tag: bugfix-{BranchName}
+ignore:
+  sha: []
+merge-message-formats: {}

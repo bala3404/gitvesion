@@ -1,7 +1,5 @@
 pipeline {
-    agent any
-	
-	 
+    agent any 
     stages {
       stage('branch name') {
            steps {
@@ -10,14 +8,12 @@ pipeline {
 			  
 			   sh '''
 			     printenv
-				
 				  
-				 '''
-				
+				 '''	
           }
         }
 	 }
-	   stage('main') {
+     stage('main') {
 	       when {
 		        branch "main"
            steps {
@@ -44,12 +40,12 @@ pipeline {
         }
 	  }
 	 } 
-       stage('Feature') {
-	       when {
+      stage('Feature') {
+	      when {
 		        branch "feature/*"
-           steps {
+          steps {
              
-               echo "${env.BRANCH_NAME}"
+              echo "${env.BRANCH_NAME}"
 			   echo "${BRANCH_NAME}"
 			   sh '''
 			     printenv
